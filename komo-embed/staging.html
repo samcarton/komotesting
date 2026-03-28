@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Embed testing page - STAGING</title>
+</head>
+
+<body>
+    <h1>Cover embed</h1>
+    <div 
+        data-komo-embed-card-cover 
+        data-komo-embed='{ "styles": {"embedStyle": "ImageButton"}, "cardId": "23fd2f2b-5d0c-4063-bf6d-7a9ef2dcf0d8", "debug": true }'
+    >
+    </div>
+    <p>Orci purus ante excepteur nunc nascetur rhoncus taciti ut. Ornare vitae sed. Amet suspendisse
+        integer rutrum
+        aliquet
+        venenatis. Nec sed nullam mauris magna vel pretium non tristique. Porta justo ac dictumst aliquip blandit.
+        Libero
+        nec eu dolor eget volutpat. Magna nulla neque. Fames tempus lorem duis orci ipsum.</p>
+
+<h1>Trigger Embed</h1>
+    <button data-komo-embed-card-trigger="f8c0fc71-e5aa-4c2a-a8f4-24ba5020eee7">
+      Trigger
+    </button>
+
+    <p>Orci purus ante excepteur nunc nascetur rhoncus taciti ut. Ornare vitae sed. Amet suspendisse integer rutrum
+        aliquet
+        venenatis. Nec sed nullam mauris magna vel pretium non tristique. Porta justo ac dictumst aliquip blandit.
+        Libero
+        nec eu dolor eget volutpat. Magna nulla neque. Fames tempus lorem duis orci ipsum.</p>
+        
+<h1>Lazy loaded inline embed</h1>
+<div id="lazyload-wrapper" style="display:none;">
+<div 
+  id="lazyload" 
+  data-komo-embed='{ "styles": {"embedStyle": "ImageButton"}, "cardId": "23fd2f2b-5d0c-4063-bf6d-7a9ef2dcf0d8", "debug": true }'
+  >
+</div>
+    </div>
+    <button id="lazyload-button" onclick="lazyload()">Click me to simulate loading</button>
+    <p>Orci purus ante excepteur nunc nascetur rhoncus taciti ut. Ornare vitae sed. Amet suspendisse integer rutrum
+        aliquet
+        venenatis. Nec sed nullam mauris magna vel pretium non tristique. Porta justo ac dictumst aliquip blandit.
+        Libero
+        nec eu dolor eget volutpat. Magna nulla neque. Fames tempus lorem duis orci ipsum.</p>
+<h1>Load From JS: auth predictor</h1>
+<button id="embed-from-js">
+    Live Predictor
+</button>
+<script>
+    komoEmbed.registerCardTrigger('9b7ec77a-c50a-4f55-99bd-fbd8f065109b', '#embed-from-js');
+</script>
+    <p>Orci purus ante excepteur nunc nascetur rhoncus taciti ut. Ornare vitae sed. Amet suspendisse integer rutrum
+        aliquet
+        venenatis. Nec sed nullam mauris magna vel pretium non tristique. Porta justo ac dictumst aliquip blandit.
+        Libero
+        nec eu dolor eget volutpat. Magna nulla neque. Fames tempus lorem duis orci ipsum.</p>
+    <p>Orci purus ante excepteur nunc nascetur rhoncus taciti ut. Ornare vitae sed. Amet suspendisse integer rutrum
+        aliquet
+        venenatis. Nec sed nullam mauris magna vel pretium non tristique. Porta justo ac dictumst aliquip blandit.
+        Libero
+        nec eu dolor eget volutpat. Magna nulla neque. Fames tempus lorem duis orci ipsum.</p>
+<h1>turnstile</h1>
+<div 
+  data-komo-embed-card-cover 
+  data-komo-embed='{ "styles": {"embedStyle": "ImageButton", "embedWidth": "500px"}, "cardId": "a464b3e5-bb30-4257-b214-aa8a9c2c5749", "debug": true }'
+></div>
+    <p>Orci purus ante excepteur nunc nascetur rhoncus taciti ut. Ornare vitae sed. Amet suspendisse integer
+        rutrum
+        aliquet
+        venenatis. Nec sed nullam mauris magna vel pretium non tristique. Porta justo ac dictumst aliquip blandit.
+        Libero
+        nec eu dolor eget volutpat. Magna nulla neque. Fames tempus lorem duis orci ipsum.</p>
+        <button data-komo-embed-card-trigger="d0130b12-bbab-4cc9-9f97-e4d2dd227bad">
+        Watch to Win
+        </button>
+    <p>Orci purus ante excepteur nunc nascetur rhoncus taciti ut. Ornare vitae sed. Amet suspendisse integer
+        rutrum
+        aliquet
+        venenatis. Nec sed nullam mauris magna vel pretium non tristique. Porta justo ac dictumst aliquip blandit.
+        Libero
+        nec eu dolor eget volutpat. Magna nulla neque. Fames tempus lorem duis orci ipsum.</p>
+        <button data-komo-embed-card-trigger="27342d43-952a-4b18-94e7-4b1d69124552">
+          Live Trivia
+        </button>
+<p>Orci purus ante excepteur nunc nascetur rhoncus taciti ut. Ornare vitae sed. Amet suspendisse integer
+        rutrum
+        aliquet
+        venenatis. Nec sed nullam mauris magna vel pretium non tristique. Porta justo ac dictumst aliquip blandit.
+        Libero
+        nec eu dolor eget volutpat. Magna nulla neque. Fames tempus lorem duis orci ipsum.</p>
+        <button data-komo-embed-card-trigger="dd20932c-bf26-429c-b008-2806e6675056">
+            Meme Generator
+          </button>
+
+<p>Orci purus ante excepteur nunc nascetur rhoncus taciti ut. Ornare vitae sed. Amet suspendisse integer
+        rutrum
+        aliquet
+        venenatis. Nec sed nullam mauris magna vel pretium non tristique. Porta justo ac dictumst aliquip blandit.
+        Libero
+        nec eu dolor eget volutpat. Magna nulla neque. Fames tempus lorem duis orci ipsum.</p>
+        <button data-komo-embed-card-trigger="0090f765-e1a1-4017-afc7-c613bbf97a44">
+            Image
+          </button>
+<h1>[QA] hub receipt uploader</h1>
+<div 
+  data-komo-embed-card-cover 
+  data-komo-embed='{ "styles": {"embedStyle": "ImageButton", "embedWidth": "500px"}, "cardId": "d75d4b6e-48ef-420b-be4e-55aed1676c35", "debug": true }'>
+</div>
+<p>Orci purus ante excepteur nunc nascetur rhoncus taciti ut. Ornare vitae sed. Amet suspendisse integer
+        rutrum
+        aliquet
+        venenatis. Nec sed nullam mauris magna vel pretium non tristique. Porta justo ac dictumst aliquip blandit.
+        Libero
+        nec eu dolor eget volutpat. Magna nulla neque. Fames tempus lorem duis orci ipsum.</p>
+<h1>Whitelabeled hub (authtoastKrillah - hub.samcarton.com)</h1>
+<div
+    data-komo-embed-card-cover
+    data-komo-embed='{"styles":{"embedStyle": "ImageButton","embedWidth": "500px"},"cardId":"4a83e76a-063a-4747-a160-093b9002bb95"}'
+>
+</div>
+<div
+    data-komo-embed-card-cover
+    data-komo-embed='{"styles":{"embedStyle": "ImageButton","embedWidth": "500px"},"cardId":"019a4cfb-00d0-78e3-be73-996c101ff457"}'
+>
+</div>
+<script>
+(function(n,r,t,c,u,e,f){
+  n[u]=n[u]||function(q){return new Proxy(q,{
+    get(y,s){return s==="q"?y[s]||[]:
+    function(...B){(n[u].q=n[u].q||[]).push([s,...B])}}})
+  }({});
+  e=r.createElement(t);f=r.getElementsByTagName(t)[0];
+  e.async=1;e.src=c;f.parentNode.insertBefore(e,f);
+})(window,document,"script","https://hub.samcarton.com/assets/embed/embed.js","komoEmbed");
+</script>
+<p>Orci purus ante excepteur nunc nascetur rhoncus taciti ut. Ornare vitae sed. Amet suspendisse integer
+        rutrum
+        aliquet
+        venenatis. Nec sed nullam mauris magna vel pretium non tristique. Porta justo ac dictumst aliquip blandit.
+        Libero
+        nec eu dolor eget volutpat. Magna nulla neque. Fames tempus lorem duis orci ipsum.</p>
+<h1>Matt</h1>
+<div  
+  data-komo-embed-card-cover 
+  data-komo-embed='{ "styles": {"embedStyle": "ImageButton", "embedWidth": "500px"}, "cardId": "d04e4695-e2e1-499e-9d6e-daed16933b3d", "debug": true }'>
+</div>
+<p>Orci purus ante excepteur nunc nascetur rhoncus taciti ut. Ornare vitae sed. Amet suspendisse integer
+        rutrum
+        aliquet
+        venenatis. Nec sed nullam mauris magna vel pretium non tristique. Porta justo ac dictumst aliquip blandit.
+        Libero
+        nec eu dolor eget volutpat. Magna nulla neque. Fames tempus lorem duis orci ipsum.</p>
+
+
+    <script>
+        (function(n,r,t,c,u,e,f){
+        n[u]=n[u]||function(q){return new Proxy(q,{
+            get(y,s){return s==="q"?y[s]||[]:
+            function(...B){(n[u].q=n[u].q||[]).push([s,...B])}}})
+        }({});
+        e=r.createElement(t);f=r.getElementsByTagName(t)[0];
+        e.async=1;e.src=c;f.parentNode.insertBefore(e,f);
+        })(window,document,"script","https://qa-new.staging.komo.site/assets/embed/embed.js","komoEmbed");
+
+        window.lazyload = function lazyLoad(){            
+            const but = document.getElementById("lazyload-button");
+
+            const original = document.getElementById("lazyload");
+            const el = original.cloneNode(true);            
+            el.setAttribute('data-komo-embed-card-cover', '');
+
+            but.parentNode.insertBefore(el, but);
+            
+            window.komoembed.load();
+        }
+    </script>
+</body>
+
+</html>
+
+

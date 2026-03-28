@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Komo Embed Demo</title>
+    <!-- Tailwind for quick styling of the provided button classes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen bg-gray-50 text-gray-900">
+    <main class="mx-auto max-w-2xl p-6 space-y-6">
+      <h1 class="text-2xl font-bold">Komo Embed Demo</h1>
+
+      <!-- 1) Include the Komo embed loader script (as provided) -->
+      <script>
+        (function (n, r, t, c, u, e, f) {
+          n[u] =
+            n[u] ||
+            function (q) {
+              return new Proxy(q, {
+                get(y, s) {
+                  return s === "q"
+                    ? y[s] || []
+                    : function (...B) {
+                        (n[u].q = n[u].q || []).push([s, ...B]);
+                      };
+                },
+              });
+            }({});
+          e = r.createElement(t);
+          f = r.getElementsByTagName(t)[0];
+          e.async = 1;
+          e.src = c;
+          f.parentNode.insertBefore(e, f);
+        })(
+          window,
+          document,
+          "script",
+          "https://hub.samcarton.com/assets/embed/embed.js",
+          "komoEmbed"
+        );
+      </script>
+
+      <!-- 2) The card cover div (as provided) -->
+      <div
+        data-komo-embed-card-cover
+        data-komo-embed='{"cardId":"4a83e76a-063a-4747-a160-093b9002bb95","styles":{"embedStyle":"ImageButton","embedWidth":"unset"}}'
+      ></div>
+
+      <!-- 3) The trigger button (as provided) -->
+      <button
+        class="bg-yellow-500 hover:bg-yellow-400 text-black font-bold py-2 px-4 rounded"
+        data-komo-embed-card-trigger="4a83e76a-063a-4747-a160-093b9002bb95"
+      >
+        Show me Komo!
+      </button>
+
+      <!-- 4) Auth form: sets the JWT using komoEmbed.setAuthToken -->
+      <section class="border rounded-2xl p-4 bg-white shadow-sm space-y-3">
+        <label for="jwtInput" class="block text-sm font-medium">JWT token</label>
+        <input
+          id="jwtInput"
+          type="text"
+          placeholder="Paste your JWT here"
+          class="w-full rounded-lg border px-3 py-2 focus:outline-none focus:ring"
+        />
+        <div class="flex items-center gap-3">
+          <button id="setTokenBtn" class="bg-black text-white font-semibold px-4 py-2 rounded-lg hover:opacity-90">
+            Set Auth Token
+          </button>
+          <span id="statusMsg" class="text-sm"></span>
+        </div>
+      </section>
+
+      <script>
+        (function () {
+          const input = document.getElementById("jwtInput");
+          const btn = document.getElementById("setTokenBtn");
+          const status = document.getElementById("statusMsg");
+
+          function setToken() {
+            const token = (input && input.value) || "";
+            if (!token) {
+              status.textContent = "Please paste a JWT token first.";
+              status.className = "text-sm text-red-600";
+              return;
+            }
+
+            // Safe to call immediately; the loader queues calls until ready.
+            try {
+//              setTimeout(() => {
+              window.komoEmbed.setAuthToken({ token, type: "jwt" });
+//              }, 10000)
+
+              status.textContent = "Auth token queued/set.";
+              status.className = "text-sm text-green-700";
+            } catch (e) {
+              status.textContent = "Could not set token. Check console.";
+              status.className = "text-sm text-red-600";
+              console.error(e);
+            }
+          }
+
+          btn.addEventListener("click", setToken);
+          input.addEventListener("keydown", function (ev) {
+            if (ev.key === "Enter") {
+              setToken();
+            }
+          });
+        })();
+      </script>
+    </main>
+  </body>
+</html>
