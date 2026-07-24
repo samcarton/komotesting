@@ -1,174 +1,390 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Embed testing page - STAGING</title>
-</head>
+    <style>
+      .dynamic-embed-section {
+        margin-top: 32px;
+        padding: 24px;
+        border: 1px solid #c7d0dc;
+      }
 
-<body>
+      .dynamic-embed-section--checkered {
+        background-color: #fff;
+        background-image: conic-gradient(
+          #f0f0f0 25%,
+          #fff 0 50%,
+          #f0f0f0 0 75%,
+          #fff 0
+        );
+        background-size: 24px 24px;
+      }
+
+      .dynamic-embed-controls {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: end;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+
+      .dynamic-embed-controls label {
+        display: grid;
+        flex: 1 1 320px;
+        gap: 4px;
+      }
+
+      .dynamic-embed-controls input,
+      .dynamic-embed-controls button {
+        box-sizing: border-box;
+        min-height: 44px;
+        padding: 10px 12px;
+        font: inherit;
+      }
+
+      .dynamic-embed-mount {
+        min-height: 128px;
+        padding: 12px;
+        border: 3px dashed #0f766e;
+        background: rgba(255, 255, 255, 0.75);
+      }
+
+      .dynamic-embed-status {
+        min-height: 24px;
+      }
+    </style>
+  </head>
+
+  <body>
     <h1>Cover embed</h1>
-    <div 
-        data-komo-embed-card-cover 
-        data-komo-embed='{ "styles": {"embedStyle": "ImageButton"}, "cardId": "23fd2f2b-5d0c-4063-bf6d-7a9ef2dcf0d8", "debug": true }'
-    >
-    </div>
-    <p>Orci purus ante excepteur nunc nascetur rhoncus taciti ut. Ornare vitae sed. Amet suspendisse
-        integer rutrum
-        aliquet
-        venenatis. Nec sed nullam mauris magna vel pretium non tristique. Porta justo ac dictumst aliquip blandit.
-        Libero
-        nec eu dolor eget volutpat. Magna nulla neque. Fames tempus lorem duis orci ipsum.</p>
+    <div
+      data-komo-embed-card-cover
+      data-komo-embed='{ "styles": {"embedStyle": "ImageButton"}, "cardId": "23fd2f2b-5d0c-4063-bf6d-7a9ef2dcf0d8", "debug": true }'
+    ></div>
+    <p>
+      Orci purus ante excepteur nunc nascetur rhoncus taciti ut. Ornare vitae
+      sed. Amet suspendisse integer rutrum aliquet venenatis. Nec sed nullam
+      mauris magna vel pretium non tristique. Porta justo ac dictumst aliquip
+      blandit. Libero nec eu dolor eget volutpat. Magna nulla neque. Fames
+      tempus lorem duis orci ipsum.
+    </p>
 
-<h1>Trigger Embed</h1>
+    <h1>Trigger Embed</h1>
     <button data-komo-embed-card-trigger="f8c0fc71-e5aa-4c2a-a8f4-24ba5020eee7">
       Trigger
     </button>
 
-    <p>Orci purus ante excepteur nunc nascetur rhoncus taciti ut. Ornare vitae sed. Amet suspendisse integer rutrum
-        aliquet
-        venenatis. Nec sed nullam mauris magna vel pretium non tristique. Porta justo ac dictumst aliquip blandit.
-        Libero
-        nec eu dolor eget volutpat. Magna nulla neque. Fames tempus lorem duis orci ipsum.</p>
-        
-<h1>Lazy loaded inline embed</h1>
-<div id="lazyload-wrapper" style="display:none;">
-<div 
-  id="lazyload" 
-  data-komo-embed='{ "styles": {"embedStyle": "ImageButton"}, "cardId": "23fd2f2b-5d0c-4063-bf6d-7a9ef2dcf0d8", "debug": true }'
-  >
-</div>
+    <p>
+      Orci purus ante excepteur nunc nascetur rhoncus taciti ut. Ornare vitae
+      sed. Amet suspendisse integer rutrum aliquet venenatis. Nec sed nullam
+      mauris magna vel pretium non tristique. Porta justo ac dictumst aliquip
+      blandit. Libero nec eu dolor eget volutpat. Magna nulla neque. Fames
+      tempus lorem duis orci ipsum.
+    </p>
+
+    <h1>Lazy loaded inline embed</h1>
+    <div id="lazyload-wrapper" style="display: none">
+      <div
+        id="lazyload"
+        data-komo-embed='{ "styles": {"embedStyle": "ImageButton"}, "cardId": "23fd2f2b-5d0c-4063-bf6d-7a9ef2dcf0d8", "debug": true }'
+      ></div>
     </div>
-    <button id="lazyload-button" onclick="lazyload()">Click me to simulate loading</button>
-    <p>Orci purus ante excepteur nunc nascetur rhoncus taciti ut. Ornare vitae sed. Amet suspendisse integer rutrum
-        aliquet
-        venenatis. Nec sed nullam mauris magna vel pretium non tristique. Porta justo ac dictumst aliquip blandit.
-        Libero
-        nec eu dolor eget volutpat. Magna nulla neque. Fames tempus lorem duis orci ipsum.</p>
-<h1>turnstile</h1>
-<div 
-  data-komo-embed-card-cover 
-  data-komo-embed='{ "styles": {"embedStyle": "ImageButton", "embedWidth": "500px"}, "cardId": "a464b3e5-bb30-4257-b214-aa8a9c2c5749", "debug": true }'
-></div>
-    <p>Orci purus ante excepteur nunc nascetur rhoncus taciti ut. Ornare vitae sed. Amet suspendisse integer
-        rutrum
-        aliquet
-        venenatis. Nec sed nullam mauris magna vel pretium non tristique. Porta justo ac dictumst aliquip blandit.
-        Libero
-        nec eu dolor eget volutpat. Magna nulla neque. Fames tempus lorem duis orci ipsum.</p>
-        <button data-komo-embed-card-trigger="d0130b12-bbab-4cc9-9f97-e4d2dd227bad">
-        Watch to Win
+    <button id="lazyload-button" onclick="lazyload()">
+      Click me to simulate loading
+    </button>
+    <p>
+      Orci purus ante excepteur nunc nascetur rhoncus taciti ut. Ornare vitae
+      sed. Amet suspendisse integer rutrum aliquet venenatis. Nec sed nullam
+      mauris magna vel pretium non tristique. Porta justo ac dictumst aliquip
+      blandit. Libero nec eu dolor eget volutpat. Magna nulla neque. Fames
+      tempus lorem duis orci ipsum.
+    </p>
+    <h1>turnstile</h1>
+    <div
+      data-komo-embed-card-cover
+      data-komo-embed='{ "styles": {"embedStyle": "ImageButton", "embedWidth": "500px"}, "cardId": "a464b3e5-bb30-4257-b214-aa8a9c2c5749", "debug": true }'
+    ></div>
+    <p>
+      Orci purus ante excepteur nunc nascetur rhoncus taciti ut. Ornare vitae
+      sed. Amet suspendisse integer rutrum aliquet venenatis. Nec sed nullam
+      mauris magna vel pretium non tristique. Porta justo ac dictumst aliquip
+      blandit. Libero nec eu dolor eget volutpat. Magna nulla neque. Fames
+      tempus lorem duis orci ipsum.
+    </p>
+    <button data-komo-embed-card-trigger="d0130b12-bbab-4cc9-9f97-e4d2dd227bad">
+      Watch to Win
+    </button>
+    <p>
+      Orci purus ante excepteur nunc nascetur rhoncus taciti ut. Ornare vitae
+      sed. Amet suspendisse integer rutrum aliquet venenatis. Nec sed nullam
+      mauris magna vel pretium non tristique. Porta justo ac dictumst aliquip
+      blandit. Libero nec eu dolor eget volutpat. Magna nulla neque. Fames
+      tempus lorem duis orci ipsum.
+    </p>
+    <button data-komo-embed-card-trigger="27342d43-952a-4b18-94e7-4b1d69124552">
+      Live Trivia
+    </button>
+    <p>
+      Orci purus ante excepteur nunc nascetur rhoncus taciti ut. Ornare vitae
+      sed. Amet suspendisse integer rutrum aliquet venenatis. Nec sed nullam
+      mauris magna vel pretium non tristique. Porta justo ac dictumst aliquip
+      blandit. Libero nec eu dolor eget volutpat. Magna nulla neque. Fames
+      tempus lorem duis orci ipsum.
+    </p>
+    <button data-komo-embed-card-trigger="dd20932c-bf26-429c-b008-2806e6675056">
+      Meme Generator
+    </button>
+
+    <p>
+      Orci purus ante excepteur nunc nascetur rhoncus taciti ut. Ornare vitae
+      sed. Amet suspendisse integer rutrum aliquet venenatis. Nec sed nullam
+      mauris magna vel pretium non tristique. Porta justo ac dictumst aliquip
+      blandit. Libero nec eu dolor eget volutpat. Magna nulla neque. Fames
+      tempus lorem duis orci ipsum.
+    </p>
+    <button data-komo-embed-card-trigger="0090f765-e1a1-4017-afc7-c613bbf97a44">
+      Image
+    </button>
+    <h1>[QA] hub receipt uploader</h1>
+    <div
+      data-komo-embed-card-cover
+      data-komo-embed='{ "styles": {"embedStyle": "ImageButton", "embedWidth": "500px"}, "cardId": "d75d4b6e-48ef-420b-be4e-55aed1676c35", "debug": true }'
+    ></div>
+    <p>
+      Orci purus ante excepteur nunc nascetur rhoncus taciti ut. Ornare vitae
+      sed. Amet suspendisse integer rutrum aliquet venenatis. Nec sed nullam
+      mauris magna vel pretium non tristique. Porta justo ac dictumst aliquip
+      blandit. Libero nec eu dolor eget volutpat. Magna nulla neque. Fames
+      tempus lorem duis orci ipsum.
+    </p>
+    <h1>Whitelabeled hub (authtoastKrillah - hub.samcarton.com)</h1>
+    <div
+      data-komo-embed-card-cover
+      data-komo-embed='{"styles":{"embedStyle": "ImageButton","embedWidth": "500px"},"cardId":"4a83e76a-063a-4747-a160-093b9002bb95"}'
+    ></div>
+    <div
+      data-komo-embed-card-cover
+      data-komo-embed='{"styles":{"embedStyle": "ImageButton","embedWidth": "500px"},"cardId":"019a4cfb-00d0-78e3-be73-996c101ff457"}'
+    ></div>
+
+    <h1>[QA] inline embeds</h1>
+    <div
+      data-komo-embed-card-in-page
+      data-komo-embed='{"styles":{"embedWidth": "500px"},"cardId":"019f88ad-0127-7ac6-bb6b-e56657087bce"}'
+    ></div>
+    <script>
+      (function (n, r, t, c, u, e, f) {
+        n[u] =
+          n[u] ||
+          (function (q) {
+            return new Proxy(q, {
+              get(y, s) {
+                return s === 'q'
+                  ? y[s] || []
+                  : function (...B) {
+                      (n[u].q = n[u].q || []).push([s, ...B]);
+                    };
+              }
+            });
+          })({});
+        e = r.createElement(t);
+        f = r.getElementsByTagName(t)[0];
+        e.async = 1;
+        e.src = c;
+        f.parentNode.insertBefore(e, f);
+      })(
+        window,
+        document,
+        'script',
+        'https://hub.samcarton.com/assets/embed/embed.js',
+        'komoEmbed'
+      );
+    </script>
+    <p>
+      Orci purus ante excepteur nunc nascetur rhoncus taciti ut. Ornare vitae
+      sed. Amet suspendisse integer rutrum aliquet venenatis. Nec sed nullam
+      mauris magna vel pretium non tristique. Porta justo ac dictumst aliquip
+      blandit. Libero nec eu dolor eget volutpat. Magna nulla neque. Fames
+      tempus lorem duis orci ipsum.
+    </p>
+    <h1>Matt</h1>
+    <div
+      data-komo-embed-card-cover
+      data-komo-embed='{ "styles": {"embedStyle": "ImageButton", "embedWidth": "500px"}, "cardId": "d04e4695-e2e1-499e-9d6e-daed16933b3d", "debug": true }'
+    ></div>
+    <p>
+      Orci purus ante excepteur nunc nascetur rhoncus taciti ut. Ornare vitae
+      sed. Amet suspendisse integer rutrum aliquet venenatis. Nec sed nullam
+      mauris magna vel pretium non tristique. Porta justo ac dictumst aliquip
+      blandit. Libero nec eu dolor eget volutpat. Magna nulla neque. Fames
+      tempus lorem duis orci ipsum.
+    </p>
+
+    <section
+      class="dynamic-embed-section"
+      aria-labelledby="dynamic-cover-heading"
+    >
+      <h1 id="dynamic-cover-heading">Cover + Modal</h1>
+      <div class="dynamic-embed-controls">
+        <label for="dynamic-cover-card-id">
+          Card ID
+          <input
+            id="dynamic-cover-card-id"
+            type="text"
+            spellcheck="false"
+            autocomplete="off"
+          />
+        </label>
+        <button id="dynamic-cover-mount-button" type="button">1. Mount</button>
+        <button id="dynamic-cover-load-button" type="button">
+          2. Load embed
         </button>
-    <p>Orci purus ante excepteur nunc nascetur rhoncus taciti ut. Ornare vitae sed. Amet suspendisse integer
-        rutrum
-        aliquet
-        venenatis. Nec sed nullam mauris magna vel pretium non tristique. Porta justo ac dictumst aliquip blandit.
-        Libero
-        nec eu dolor eget volutpat. Magna nulla neque. Fames tempus lorem duis orci ipsum.</p>
-        <button data-komo-embed-card-trigger="27342d43-952a-4b18-94e7-4b1d69124552">
-          Live Trivia
+      </div>
+      <div id="dynamic-cover-mount" class="dynamic-embed-mount"></div>
+      <p
+        id="dynamic-cover-status"
+        class="dynamic-embed-status"
+        aria-live="polite"
+      ></p>
+    </section>
+
+    <section
+      class="dynamic-embed-section dynamic-embed-section--checkered"
+      aria-labelledby="dynamic-in-page-heading"
+    >
+      <h1 id="dynamic-in-page-heading">In-page Embed</h1>
+      <div class="dynamic-embed-controls">
+        <label for="dynamic-in-page-card-id">
+          Card ID
+          <input
+            id="dynamic-in-page-card-id"
+            type="text"
+            spellcheck="false"
+            autocomplete="off"
+          />
+        </label>
+        <button id="dynamic-in-page-mount-button" type="button">
+          1. Mount
         </button>
-<p>Orci purus ante excepteur nunc nascetur rhoncus taciti ut. Ornare vitae sed. Amet suspendisse integer
-        rutrum
-        aliquet
-        venenatis. Nec sed nullam mauris magna vel pretium non tristique. Porta justo ac dictumst aliquip blandit.
-        Libero
-        nec eu dolor eget volutpat. Magna nulla neque. Fames tempus lorem duis orci ipsum.</p>
-        <button data-komo-embed-card-trigger="dd20932c-bf26-429c-b008-2806e6675056">
-            Meme Generator
-          </button>
-
-<p>Orci purus ante excepteur nunc nascetur rhoncus taciti ut. Ornare vitae sed. Amet suspendisse integer
-        rutrum
-        aliquet
-        venenatis. Nec sed nullam mauris magna vel pretium non tristique. Porta justo ac dictumst aliquip blandit.
-        Libero
-        nec eu dolor eget volutpat. Magna nulla neque. Fames tempus lorem duis orci ipsum.</p>
-        <button data-komo-embed-card-trigger="0090f765-e1a1-4017-afc7-c613bbf97a44">
-            Image
-          </button>
-<h1>[QA] hub receipt uploader</h1>
-<div 
-  data-komo-embed-card-cover 
-  data-komo-embed='{ "styles": {"embedStyle": "ImageButton", "embedWidth": "500px"}, "cardId": "d75d4b6e-48ef-420b-be4e-55aed1676c35", "debug": true }'>
-</div>
-<p>Orci purus ante excepteur nunc nascetur rhoncus taciti ut. Ornare vitae sed. Amet suspendisse integer
-        rutrum
-        aliquet
-        venenatis. Nec sed nullam mauris magna vel pretium non tristique. Porta justo ac dictumst aliquip blandit.
-        Libero
-        nec eu dolor eget volutpat. Magna nulla neque. Fames tempus lorem duis orci ipsum.</p>
-<h1>Whitelabeled hub (authtoastKrillah - hub.samcarton.com)</h1>
-<div
-    data-komo-embed-card-cover
-    data-komo-embed='{"styles":{"embedStyle": "ImageButton","embedWidth": "500px"},"cardId":"4a83e76a-063a-4747-a160-093b9002bb95"}'
->
-</div>
-<div
-    data-komo-embed-card-cover
-    data-komo-embed='{"styles":{"embedStyle": "ImageButton","embedWidth": "500px"},"cardId":"019a4cfb-00d0-78e3-be73-996c101ff457"}'
->
-</div>
-
-<h1>[QA] inline embeds</h1>
-<div
-    data-komo-embed-card-in-page
-    data-komo-embed='{"styles":{"embedWidth": "500px"},"cardId":"019f88ad-0127-7ac6-bb6b-e56657087bce"}'
->
-</div>
-<script>
-(function(n,r,t,c,u,e,f){
-  n[u]=n[u]||function(q){return new Proxy(q,{
-    get(y,s){return s==="q"?y[s]||[]:
-    function(...B){(n[u].q=n[u].q||[]).push([s,...B])}}})
-  }({});
-  e=r.createElement(t);f=r.getElementsByTagName(t)[0];
-  e.async=1;e.src=c;f.parentNode.insertBefore(e,f);
-})(window,document,"script","https://hub.samcarton.com/assets/embed/embed.js","komoEmbed");
-</script>
-<p>Orci purus ante excepteur nunc nascetur rhoncus taciti ut. Ornare vitae sed. Amet suspendisse integer
-        rutrum
-        aliquet
-        venenatis. Nec sed nullam mauris magna vel pretium non tristique. Porta justo ac dictumst aliquip blandit.
-        Libero
-        nec eu dolor eget volutpat. Magna nulla neque. Fames tempus lorem duis orci ipsum.</p>
-<h1>Matt</h1>
-<div  
-  data-komo-embed-card-cover 
-  data-komo-embed='{ "styles": {"embedStyle": "ImageButton", "embedWidth": "500px"}, "cardId": "d04e4695-e2e1-499e-9d6e-daed16933b3d", "debug": true }'>
-</div>
-<p>Orci purus ante excepteur nunc nascetur rhoncus taciti ut. Ornare vitae sed. Amet suspendisse integer
-        rutrum
-        aliquet
-        venenatis. Nec sed nullam mauris magna vel pretium non tristique. Porta justo ac dictumst aliquip blandit.
-        Libero
-        nec eu dolor eget volutpat. Magna nulla neque. Fames tempus lorem duis orci ipsum.</p>
-
+        <button id="dynamic-in-page-load-button" type="button">
+          2. Load embed
+        </button>
+      </div>
+      <div id="dynamic-in-page-mount" class="dynamic-embed-mount"></div>
+      <p
+        id="dynamic-in-page-status"
+        class="dynamic-embed-status"
+        aria-live="polite"
+      ></p>
+    </section>
 
     <script>
-        (function(n,r,t,c,u,e,f){
-        n[u]=n[u]||function(q){return new Proxy(q,{
-            get(y,s){return s==="q"?y[s]||[]:
-            function(...B){(n[u].q=n[u].q||[]).push([s,...B])}}})
-        }({});
-        e=r.createElement(t);f=r.getElementsByTagName(t)[0];
-        e.async=1;e.src=c;f.parentNode.insertBefore(e,f);
-        })(window,document,"script","https://qa-new.staging.komo.site/assets/embed/embed.js","komoEmbed");
+      (function (n, r, t, c, u, e, f) {
+        n[u] =
+          n[u] ||
+          (function (q) {
+            return new Proxy(q, {
+              get(y, s) {
+                return s === 'q'
+                  ? y[s] || []
+                  : function (...B) {
+                      (n[u].q = n[u].q || []).push([s, ...B]);
+                    };
+              }
+            });
+          })({});
+        e = r.createElement(t);
+        f = r.getElementsByTagName(t)[0];
+        e.async = 1;
+        e.src = c;
+        f.parentNode.insertBefore(e, f);
+      })(
+        window,
+        document,
+        'script',
+        'https://qa-new.staging.komo.site/assets/embed/embed.js',
+        'komoEmbed'
+      );
 
-        window.lazyload = function lazyLoad(){            
-            const but = document.getElementById("lazyload-button");
+      window.lazyload = function lazyLoad() {
+        const but = document.getElementById('lazyload-button');
 
-            const original = document.getElementById("lazyload");
-            const el = original.cloneNode(true);            
-            el.setAttribute('data-komo-embed-card-cover', '');
+        const original = document.getElementById('lazyload');
+        const el = original.cloneNode(true);
+        el.setAttribute('data-komo-embed-card-cover', '');
 
-            but.parentNode.insertBefore(el, but);
-            
-            window.komoembed.load();
-        }
+        but.parentNode.insertBefore(el, but);
+
+        window.komoembed.load();
+      };
+
+      function configureDynamicEmbed(options) {
+        const cardIdInput = document.getElementById(options.cardIdInputId);
+        const mount = document.getElementById(options.mountId);
+        const status = document.getElementById(options.statusId);
+        let mountCount = 0;
+
+        document
+          .getElementById(options.mountButtonId)
+          .addEventListener('click', function () {
+            const cardId = cardIdInput.value.trim();
+            if (!cardId) {
+              status.textContent = 'Enter a Card ID first.';
+              cardIdInput.focus();
+              return;
+            }
+
+            mountCount += 1;
+            const embed = document.createElement('div');
+            embed.setAttribute(options.embedAttribute, '');
+            embed.setAttribute(
+              'data-komo-embed',
+              JSON.stringify({
+                embedId: options.embedIdPrefix + '-' + mountCount,
+                cardId: cardId,
+                debug: true,
+                styles: options.styles
+              })
+            );
+            mount.replaceChildren(embed);
+            status.textContent = 'Mounted ' + cardId + '. Click Load embed.';
+          });
+
+        document
+          .getElementById(options.loadButtonId)
+          .addEventListener('click', function () {
+            if (!mount.firstElementChild) {
+              status.textContent = 'Mount an embed first.';
+              return;
+            }
+
+            window.komoEmbed.load();
+            status.textContent = 'komoEmbed.load() called.';
+          });
+      }
+
+      configureDynamicEmbed({
+        cardIdInputId: 'dynamic-cover-card-id',
+        mountId: 'dynamic-cover-mount',
+        statusId: 'dynamic-cover-status',
+        mountButtonId: 'dynamic-cover-mount-button',
+        loadButtonId: 'dynamic-cover-load-button',
+        embedAttribute: 'data-komo-embed-card-cover',
+        embedIdPrefix: 'dynamic-cover',
+        styles: { embedStyle: 'ImageButton', embedWidth: '500px' }
+      });
+
+      configureDynamicEmbed({
+        cardIdInputId: 'dynamic-in-page-card-id',
+        mountId: 'dynamic-in-page-mount',
+        statusId: 'dynamic-in-page-status',
+        mountButtonId: 'dynamic-in-page-mount-button',
+        loadButtonId: 'dynamic-in-page-load-button',
+        embedAttribute: 'data-komo-embed-card-in-page',
+        embedIdPrefix: 'dynamic-in-page',
+        styles: { embedWidth: '672px' }
+      });
     </script>
-</body>
-
+  </body>
 </html>
-
-
