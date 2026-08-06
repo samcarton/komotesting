@@ -53,6 +53,14 @@
       .dynamic-embed-status {
         min-height: 24px;
       }
+
+      .cms-full-width-centered-children {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+        margin-inline: calc(50% - 50vw);
+      }
     </style>
   </head>
 
@@ -173,6 +181,41 @@
       data-komo-embed-card-in-page
       data-komo-embed='{"styles":{"embedWidth": "500px"},"cardId":"019f88ad-0127-7ac6-bb6b-e56657087bce"}'
     ></div>
+    <h2>Right-aligned inline embed in centered CMS container</h2>
+    <div class="cms-full-width-centered-children">
+      <div
+        data-komo-embed-card-in-page
+        data-komo-embed='{"styles":{"embedWidth":"555px","embedAlignment":"end"},"cardId":"019f88ad-0127-7ac6-bb6b-e56657087bce"}'
+      ></div>
+      <script>
+        (function (n, r, t, c, u, e, f) {
+          n[u] =
+            n[u] ||
+            (function (q) {
+              return new Proxy(q, {
+                get(y, s) {
+                  return s === 'q'
+                    ? y[s] || []
+                    : function (...B) {
+                        (n[u].q = n[u].q || []).push([s, ...B]);
+                      };
+                }
+              });
+            })({});
+          e = r.createElement(t);
+          f = r.getElementsByTagName(t)[0];
+          e.async = 1;
+          e.src = c;
+          f.parentNode.insertBefore(e, f);
+        })(
+          window,
+          document,
+          'script',
+          'https://qa-new.staging.komo.site/assets/embed/embed.js',
+          'komoEmbed'
+        );
+      </script>
+    </div>
     <script>
       (function (n, r, t, c, u, e, f) {
         n[u] =
